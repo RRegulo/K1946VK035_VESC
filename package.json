@@ -1,0 +1,34 @@
+{
+  "name": "k1946vk035-vesc",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "postinstall": "xpm install && node scripts/install-openocd.cjs",
+    "configure": "xpm run configure",
+    "configure:debug": "xpm run configure:debug",
+    "build": "xpm run build",
+    "build:debug": "xpm run build:debug",
+    "test": "xpm run test"
+  },
+  "devDependencies": {
+    "xpm": "0.23.3",
+    "tar": "7.5.22",
+    "unzipper": "0.12.3",
+    "https-proxy-agent": "7.0.6"
+  },
+  "xpack": {
+    "minimumXpmRequired": "0.16.3",
+    "devDependencies": {
+      "@xpack-dev-tools/arm-none-eabi-gcc": "14.2.1-1.1.1",
+      "@xpack-dev-tools/cmake": "3.31.9-1.1",
+      "@xpack-dev-tools/ninja-build": "1.13.1-1.1"
+    },
+    "actions": {
+      "configure": "node scripts/configure.cjs",
+      "configure:debug": "node scripts/configure.cjs Debug",
+      "build": "cmake --build build",
+      "build:debug": "cmake --build build-debug",
+      "test": "cmake --build build --target host_tests"
+    }
+  }
+}

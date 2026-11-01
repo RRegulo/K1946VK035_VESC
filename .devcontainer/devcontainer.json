@@ -1,0 +1,23 @@
+{
+    "name": "K1946VK035 BLDC board",
+    "build": { "dockerfile": "Dockerfile", "context": ".." },
+    "remoteUser": "vscode",
+    "runArgs": ["--privileged"],
+    "mounts": ["source=/dev,target=/dev,type=bind"],
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-vscode.cpptools",
+                "ms-vscode.cmake-tools",
+                "marus25.cortex-debug",
+                "zixuanwang.linkerscript"
+            ],
+            "settings": {
+                "cmake.generator": "Ninja",
+                "cmake.configureOnOpen": true,
+                "files.associations": { "*.ld": "linkerscript" }
+            }
+        }
+    },
+    "postCreateCommand": "cmake -S . -B build -G Ninja"
+}

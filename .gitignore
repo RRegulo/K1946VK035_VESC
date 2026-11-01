@@ -1,55 +1,45 @@
-# Prerequisites
-*.d
-
-# Object files
-*.o
-*.ko
-*.obj
+# Build artifacts
+build/
+build-rel/
+cmake-build-*/
 *.elf
-
-# Linker output
-*.ilk
-*.map
-*.exp
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
-
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
-
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
 *.hex
+*.bin
+*.map
+*.list
+*.o
+*.obj
+*.a
+*.lib
 
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
+# IDE
+.vscode/*
+!.vscode/launch.json
+!.vscode/daplink-swd.cfg
+!.vscode/jlink-swd.cfg
+!.vscode/k1921vk035.cfg
+.idea/
+*.swp
+*.swo
+*~
 
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
+# OS
+.DS_Store
+Thumbs.db
 
-# debug information files
-*.dwo
+# Debug
+Debug/
+Release/
+
+# Clangd cache
+.cache/
+node_modules/
+xpacks/
+tools/openocd/
+build-*/
+
+# Local article and media (not published)
+/article.md
+/Images/
+/RigolDS*.png
+/video_*.mp4

@@ -1,0 +1,73 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug K1946VK035 (J-Link)",
+      "type": "cortex-debug",
+      "request": "launch",
+      "servertype": "openocd",
+      "cwd": "${workspaceFolder}",
+      "executable": "${workspaceFolder}/build/K1946VK035_BLDC_BOARD.elf",
+      "serverpath": "${workspaceFolder}/tools/openocd/bin/openocd",
+      "gdbPath": "${workspaceFolder}/xpacks/@xpack-dev-tools/arm-none-eabi-gcc/.content/bin/arm-none-eabi-gdb",
+      "windows": {
+        "serverpath": "${workspaceFolder}/tools/openocd/bin/openocd.exe",
+        "gdbPath": "${workspaceFolder}/xpacks/@xpack-dev-tools/arm-none-eabi-gcc/.content/bin/arm-none-eabi-gdb.exe"
+      },
+      "searchDir": ["${workspaceFolder}/tools/openocd/openocd/scripts"],
+      "configFiles": ["${workspaceFolder}/.vscode/jlink-swd.cfg", "target/k1921vk035.cfg"],
+      "svdFile": "${workspaceFolder}/K1921VK035.svd",
+      "runToEntryPoint": "main"
+    },
+    {
+      "name": "Debug K1946VK035 (DAPLink, Debug-сборка)",
+      "type": "cortex-debug",
+      "request": "launch",
+      "servertype": "openocd",
+      "cwd": "${workspaceFolder}",
+      "executable": "${workspaceFolder}/build-debug/K1946VK035_BLDC_BOARD.elf",
+      "serverpath": "${workspaceFolder}/tools/openocd/bin/openocd",
+      "gdbPath": "${workspaceFolder}/xpacks/@xpack-dev-tools/arm-none-eabi-gcc/.content/bin/arm-none-eabi-gdb",
+      "windows": {
+        "serverpath": "${workspaceFolder}/tools/openocd/bin/openocd.exe",
+        "gdbPath": "${workspaceFolder}/xpacks/@xpack-dev-tools/arm-none-eabi-gcc/.content/bin/arm-none-eabi-gdb.exe"
+      },
+      "searchDir": ["${workspaceFolder}/tools/openocd/openocd/scripts"],
+      "configFiles": ["${workspaceFolder}/.vscode/daplink-swd.cfg", "target/k1921vk035.cfg"],
+      "svdFile": "${workspaceFolder}/K1921VK035.svd",
+      "runToEntryPoint": "main"
+    },
+    {
+      "name": "Debug K1946VK035 (DAPLink, xPack)",
+      "type": "cortex-debug",
+      "request": "launch",
+      "servertype": "openocd",
+      "cwd": "${workspaceFolder}",
+      "executable": "${workspaceFolder}/build/K1946VK035_BLDC_BOARD.elf",
+      "serverpath": "${workspaceFolder}/tools/openocd/bin/openocd",
+      "gdbPath": "${workspaceFolder}/xpacks/@xpack-dev-tools/arm-none-eabi-gcc/.content/bin/arm-none-eabi-gdb",
+      "windows": {
+        "serverpath": "${workspaceFolder}/tools/openocd/bin/openocd.exe",
+        "gdbPath": "${workspaceFolder}/xpacks/@xpack-dev-tools/arm-none-eabi-gcc/.content/bin/arm-none-eabi-gdb.exe"
+      },
+      "searchDir": ["${workspaceFolder}/tools/openocd/openocd/scripts"],
+      "configFiles": ["${workspaceFolder}/.vscode/daplink-swd.cfg", "target/k1921vk035.cfg"],
+      "svdFile": "${workspaceFolder}/K1921VK035.svd",
+      "runToEntryPoint": "main"
+    },
+    {
+      "name": "Debug K1946VK035 (DAPLink, Dev Container)",
+      "type": "cortex-debug",
+      "request": "launch",
+      "servertype": "openocd",
+      "cwd": "${workspaceFolder}",
+      "executable": "${workspaceFolder}/build/K1946VK035_BLDC_BOARD.elf",
+      "serverpath": "/usr/local/bin/openocd-k1921vk",
+      "gdbPath": "/usr/bin/gdb-multiarch",
+      "searchDir": ["/tools/openocd-k1921vk/openocd/scripts"],
+      "configFiles": ["${workspaceFolder}/.vscode/daplink-swd.cfg", "target/k1921vk035.cfg"],
+      "svdFile": "${workspaceFolder}/K1921VK035.svd",
+      "runToEntryPoint": "main"
+    }
+  ]
+}
